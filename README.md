@@ -1,4 +1,4 @@
 # chef-centos7-httpd-demo
 
-TODO: Enter the cookbook description here.
+This is a demo cookbook that I use to play with my centos7 httpd cookbook.
 
