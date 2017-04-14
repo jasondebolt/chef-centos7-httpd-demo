@@ -5,14 +5,15 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec_reference.html
 
-unless os.windows?
-  describe user('root') do
-    it { should exist }
-    skip 'This is an example test, replace with your own test.'
-  end
+remote_file '/var/www/html/jason.jpg' do
+  source 'https://s3-us-west-1.amazonaws.com/jasondeboltpublic/jason_suit_night.jpg'
+  owner 'web_admin'
+  group 'web_admin'
 end
 
-describe port(80) do
-  it { should_not be_listening }
-  skip 'This is an example test, replace with your own test.'
+template '/var/www/html/index.html' do
+  source 'index.html.erb'
+  owner 'web_admin'
+  group 'web_admin'
+  mode 00744
 end
