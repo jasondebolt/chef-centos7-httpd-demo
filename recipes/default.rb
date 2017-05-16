@@ -15,6 +15,7 @@ end
 
 template '/var/www/html/index.html' do
   source 'index.html.erb'
+  action :create
   owner 'web_admin'
   group 'web_admin'
   mode 00744
